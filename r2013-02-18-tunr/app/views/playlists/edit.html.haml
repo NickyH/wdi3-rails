@@ -1,0 +1,12 @@
+%h1= @playlist.name
+- @playlist.songs.each do |song|
+  %p= link_to("#{song.name}", song_path(song))
+  %div= audio_tag(song.filename, :controls => true)
+  / %td= link_to('Delete', :action => edit_playlist_path(@playlist), :confirm => 'Are you sure?', :class => 'button alert radius tiny')
+
+= form_tag playlist_path do
+= hidden_field_tag 'song_id', @song.id
+- @playlist.songs.each do |song|
+  %span= song.name
+  %span= check_box_tag('playlist[song_ids][]', song.id, song.in?(@playlist.songs.to_a))
+= submit_tag 'Update', :class => 'button radius'

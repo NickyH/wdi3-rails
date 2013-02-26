@@ -1,0 +1,22 @@
+- artist = @song
+%h1= @song.name
+%br
+%div= image_tag(@song.image)
+%br
+%div= audio_tag(@song.filename, :controls => true)
+%br
+%div= link_to(@song.artist.name, artist_path(@song.artist.id)) if @song.artist.present?
+%br
+- @song.genres.each do |genre|
+  %p= genre.name
+
+- if @auth.present? && !@auth.is_admin
+  - songs_array = []
+  - @auth.playlists.each do |playlist|
+    - songs_array = songs_array + playlist.songs.map(&:name).flatten
+  - if songs_array.include?(@song.name) || @song.cost >= @auth.balance
+    %p.newlink= link_to("Refund #{(@song.cost * 0.7)}", refund_song_path(@song), :class => 'button radius')
+  - else
+    %p.newlink= link_to(@song.cost, purchase_song_path(@song), :class => 'button radius')
+- else
+  %p.newlink= link_to(@song.cost, purchase_song_path(@song), :class => 'button disabled')

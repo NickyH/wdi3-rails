@@ -1,0 +1,23 @@
+@import 'colors';
+
+table
+{
+  .row0 td
+  {
+  color: $cell_font_1;
+  background-color: $cell_color_1;
+  }
+
+  .row1 td
+  {
+  color: $cell_font_2;
+  background-color: $cell_color_2;
+  }
+
+  img
+  {
+    width: 100px;
+    height: 100px;
+  }
+
+}

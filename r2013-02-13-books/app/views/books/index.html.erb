@@ -1,0 +1,7 @@
+<% @books.each do |book| %>
+<%= book.title %>
+<%= book.date %>
+<%= book.genre %>
+<%= book.author_id %>
+<%= image_tag(book.image) %>
+<% end %>

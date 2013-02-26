@@ -1,0 +1,19 @@
+%h1= 'wdi bank'
+
+.home
+    .column1
+
+    %p= "Checking Balance"
+    #balancechecking= '$1000'
+    .a= text_field_tag 'enterchecking'
+    .b= submit_tag 'Deposit', :id => 'btndepositchecking'
+    .b= submit_tag 'Withdraw', :id => 'btnwithdrawchecking'
+
+    .column1
+
+    %p= "Savings Balance"
+    #balancesaving= '$1000'
+    .a= text_field_tag 'entersavings'
+    .b= submit_tag 'Deposit', :id => 'btndepositsavings'
+    .b= submit_tag 'Withdraw', :id => 'btnwithdrawsavings'
+

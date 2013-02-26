@@ -1,0 +1,15 @@
+<div class='book-section'>
+  <%= image_tag(@ingredient.image) %>
+  <li><%= @ingredient.name %></li>
+  <li><%= @ingredient.chef %></li>
+</div>
+<div class='recipe-section'>
+  <% @ingredient.recipes.each do |recipe| %>
+  <li><%= recipe.name %></li>
+  <li><%= image_tag(ingredient.image) %></li>
+      <li><% recipe.ingredients.each do |ingredient| %></li>
+      <li><%= ingredient.name %></li>
+      <%= image_tag(ingredient.image) %>
+    <% end %>
+  <% end %>
+</div>

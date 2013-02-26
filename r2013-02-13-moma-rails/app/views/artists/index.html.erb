@@ -1,0 +1,18 @@
+
+  <ol>
+    <% @artists.each do |artist| %>
+      <li>
+        <ul>
+          <div class='column1'>
+          <li><%= link_to artist.name, artist %></li>
+          <li><%= artist.nationality %></li>
+          <li><%= artist.dob %></li>
+          <li><%= artist.period %></li></div>
+          <div class='column2'>
+          <%= image_tag(artist.image) %>
+          </div>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+</div>

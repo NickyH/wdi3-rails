@@ -1,0 +1,22 @@
+
+    <li>
+      <ul>
+         <%= link_to 'Delete', @artist, :method => :delete %>
+         <%= link_to 'Edit', edit_artist_path(@artist), :method => :get %>
+
+        <li><%= @artist.name %></li>
+        <li><%= @artist.nationality %></li>
+        <li><%= @artist.dob %></li>
+        <li><%= @artist.period %></li>
+        <%= image_tag(@artist.image) %>
+
+      </ul>
+    </li>
+
+<% @artist.arts.each do |art| %>
+  <li><%= @art.title %></li>
+  <li><%= art.year %></li>
+  <li><%= art.medium %></li>
+  <li><%= art.style %></li>
+  <%= image_tag(art.image) %>
+<% end %>

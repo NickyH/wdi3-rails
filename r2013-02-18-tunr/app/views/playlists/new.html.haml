@@ -1,0 +1,14 @@
+.row
+  .five.columns
+    = render(:partial => 'shared/errors', :locals => {:object => @playlist})
+    = form_for @playlist do |f|
+      = hidden_field_tag 'user_id', @auth.id, :name => 'playlist[user_id]'
+      = f.label :name
+      = f.text_field :name, :autofocus => true
+      - Song.order(:name).each do |song|
+        %span= song.name
+        %span= check_box_tag('playlist[song_ids][]', song.id, song.in?(@playlist.songs.to_a))
+        %br
+      = f.submit nil, :class => 'button radius'
+  .seven.columns
+

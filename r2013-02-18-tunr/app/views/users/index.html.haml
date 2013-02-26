@@ -1,0 +1,12 @@
+#users
+  %table
+    - @users.each do |user|
+      %tr{:class => cycle('row0', 'row1')}
+        %td
+          - if user.is_admin
+            %span.label.alert.radius= user.name
+          - else
+            %span.label.success.radius= user.name
+        %td= image_tag(user.image)
+        %td= number_to_currency(user.balance)
+        %td= link_to('Details', user_path(user), :class => 'button radius tiny')

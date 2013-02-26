@@ -1,0 +1,9 @@
+
+<div class='book-section'>
+  <%= image_tag(@book.image) %>
+  <%= link_to 'Edit', edit_book_path(@book) %>
+  <%= link_to 'Delete', book_path(@book), :method => :delete, :confirm => 'Are you sure you want to delete?' %>
+  <li id='li-title2'><%= link_to(@book.title, @book) %></li>
+  <li><%= @book.cuisine %></li>
+  <li><%= @book.chef %></li>
+</div>

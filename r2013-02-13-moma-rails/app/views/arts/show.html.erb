@@ -1,0 +1,7 @@
+<%= link_to 'Delete', @art, :method => :delete, :confirm => 'Is it ok to delete?' %>
+<%= link_to 'Edit', @art, :method => :edit %>
+        <li><%= @art.title %></li>
+        <li><%= @art.year %></li>
+        <li><%= @art.medium %></li>
+        <li><%= @art.style %></li>
+        <%= image_tag(@art.image) %>

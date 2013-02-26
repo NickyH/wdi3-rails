@@ -1,0 +1,200 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
+
+a
+{
+  text-decoration: none;
+  color: #007810;
+}
+
+li
+{
+  list-style: none;
+}
+
+#li-title a
+{
+  text-decoration: none;
+  color: #007810;
+  font-size: 30px;
+}
+
+a:hover
+{
+  text-decoration: none;
+  color: #207178;
+}
+
+body
+{
+  padding: 50px 50px 50px 50px;
+  margin: 50px 50px 50px 50px;
+}
+
+img
+{
+  border: 1px solid grey;
+  border-radius: 10px;
+  border: 2px solid grey;
+  width: 150px;
+  float: left;
+}
+
+nav
+{
+  padding-bottom: 50px;
+  margin: 10px auto 30px 0;
+  background-color: grey;
+  height: 100px;
+  width: 960px;
+  border-radius: 10px;
+}
+
+nav a
+{
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 0px 20px 20px 20px;
+  line-height: 60px;
+  font-size: 50px;
+  color: #47D9BF;
+}
+
+.small-nav
+{
+  padding-bottom: 50px;
+  margin: 10px auto 30px 0;
+  background-color: grey;
+  opacity: .8;
+  height: 40px;
+  width: 960px;
+  border-radius: 10px;
+}
+
+.small-nav a
+{
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 0px 20px 20px 20px;
+  line-height: 60px;
+  font-size: 25px;
+  color: #47D9BF;
+
+}
+
+li
+{
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 0px 0 20px 0px;
+  border-radius: 10px;
+  line-height: 15px;
+  font-size: 15px;
+  float: left;
+}
+
+#li-title2
+{
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 0px 0 20px 0px;
+  border-radius: 10px;
+  line-height: 10px;
+  font-size: 20px;
+  float: left;
+}
+
+.book-section
+{
+  padding-bottom: 50px;
+  margin: 10px auto 30px auto;
+  background-color: grey;
+  ba
+  height: 200px;
+  width: 960px;
+  border-radius: 10px;
+  float: left;
+}
+
+.book-section img
+{
+  margin: 20px auto auto 10px;
+  height: 150px;
+  float: left;
+}
+
+.book-section li
+{
+  line-height: 20px;
+  font-size: 20px;
+  font-family: 'Julius Sans One', sans-serif;
+  float: left;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.book-section a
+{
+  line-height: 200px;
+  font-size: 20px;
+  font-family: 'Julius Sans One', sans-serif;
+  float: right;
+  margin: auto 30px auto auto;
+  text-align: bottom;
+}
+
+.book-section li #li-title2
+{
+  line-height: 60px;
+  font-size: 60px;
+  font-family: 'Julius Sans One', sans-serif;
+  float: left;
+  margin: 50px auto auto 30px;
+}
+
+.recipe-section
+{
+  padding-bottom: 50px;
+  margin: 10px auto 30px auto;
+  background-color: grey;
+  height: 200px;
+  width: 960px;
+  border-radius: 10px;
+  float: left;
+
+}
+
+.recipe-section img
+{
+  margin: 30px auto 30px 50px;
+  height: 150px;
+  float: left;
+
+
+}
+
+.recipe-section li #li-title2
+{
+  line-height: 60px;
+  font-size: 50px;
+  font-family: 'Julius Sans One', sans-serif;
+  float: left;
+  margin: 50px auto auto 30px;
+}
+
+.recipe-section li
+{
+  line-height: 20px;
+  font-size: 20px;
+  font-family: 'Julius Sans One', sans-serif;
+  float: left;
+  margin-top: 30px;
+  margin-left: 30px;
+
+}
+
+.recipe-section a
+{
+  line-height: 200px;
+  font-size: 20px;
+  font-family: 'Julius Sans One', sans-serif;
+  float: right;
+  margin: auto 30px auto auto;
+  text-align: bottom;
+}
+

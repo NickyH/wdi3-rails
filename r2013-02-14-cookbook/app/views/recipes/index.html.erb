@@ -1,0 +1,16 @@
+<nav class='small-nav'><%= link_to 'Add Recipe', new_recipe_path %></nav>
+
+  <% @recipes.each do |recipe| %>
+  <div class='recipe-section'>
+    <ul>
+      <%= image_tag(recipe.image) %>
+      <li id='li-title'><%= recipe.name %></li>
+      <br>
+      <li><%= recipe.course %></li>
+      <br>
+      <li><%= recipe.servingsize %></li>
+    </ul>
+    <%= link_to 'Edit', edit_recipe_path(recipe.id) %>
+    <%= link_to 'Delete', @recipe, :method => :delete, :confirm => 'Are you sure you want to delete?' %>
+  </div>
+    <% end %>

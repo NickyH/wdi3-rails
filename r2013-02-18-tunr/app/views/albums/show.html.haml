@@ -1,0 +1,21 @@
+%h1= @album.name
+- @album.songs.each do |song|
+  %p= link_to("#{song.name}", song_path(song))
+
+
+
+
+%h1= @album.name
+%br
+%div= image_tag(@album.image)
+%br
+
+- if @auth.present? && !@auth.is_admin
+  - albums_array = @auth.albums.map(&:name).flatten
+  - album_cost = @album.songs.map(&:cost).flatten.sum
+  - if albums_array.include?(@album.name) || album_cost >= @auth.balance
+    %p.newlink= link_to('Buy', purchase_album_path(@album), :class => 'button disabled')
+  - else
+    %p.newlink= link_to('Buy', purchase_album_path(@album), :class => 'button radius')
+- else
+  %p.newlink= link_to('Buy', purchase_album_path(@album), :class => 'button disabled')

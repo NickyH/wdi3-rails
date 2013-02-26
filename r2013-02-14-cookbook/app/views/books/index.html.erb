@@ -1,0 +1,19 @@
+<nav class='small-nav'><%= link_to 'Add Book', new_book_path %></nav>
+<div class='book-section'>
+  <ol>
+    <% @books.each do |book| %>
+      <li>
+        <ul>
+          <%= image_tag(book.image) %>
+          <li id='li-title'><%= link_to(book.title, book) %></li>
+          <br>
+          <li><%= book.cuisine %></li>
+          <br>
+          <li><%= book.chef %></li>
+          <br>
+
+        </ul>
+      </li>
+    <% end %>
+  <ol>
+</div>

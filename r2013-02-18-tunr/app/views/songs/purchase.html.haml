@@ -1,0 +1,18 @@
+- artist = @song
+%h1= @song.name
+%br
+%div= image_tag(@song.image)
+%br
+%div= audio_tag(@song.filename, :controls => true)
+%br
+%div= link_to(@song.artist.name, artist_path(@song.artist.id)) if @song.artist.present?
+%br
+- @song.genres.each do |genre|
+  %p= genre.name
+
+= form_tag bought_song_path do
+  = hidden_field_tag 'song_id', @song.id
+  - @auth.playlists.each do |playlist|
+    %span= playlist.name
+    %span= check_box_tag('song[playlist_ids][]', playlist.id, playlist.in?(@song.playlists.to_a))
+  = submit_tag 'Buy', :class => 'button radius'

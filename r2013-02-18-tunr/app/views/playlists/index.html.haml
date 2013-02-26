@@ -1,0 +1,6 @@
+%p.newlink= link_to('New Playlist', new_playlist_path, :class => 'button radius') if is_admin
+%table
+  - @playlists.each do |playlist|
+    %tr{:class => cycle('row0', 'row1')}
+      %td= link_to("#{playlist.name}", playlist_path(playlist))
+      %td= link_to('Edit', playlist_path(playlist), :class => 'button radius tiny') if is_admin

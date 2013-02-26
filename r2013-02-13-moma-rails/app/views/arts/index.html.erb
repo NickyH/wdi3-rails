@@ -1,0 +1,19 @@
+<div class='columnA'>
+  <ol>
+    <% @arts.each do |art| %>
+      <div class='column1'>
+        <li>
+          <ul>
+            <li><%= link_to art.title, art %></li>
+            <li><%= art.year %></li>
+            <li><%= art.medium %></li>
+            <li><%= art.style %></li>
+          </ul>
+        </li>
+      </div>
+      <div class='column2'>
+        <%= image_tag(art.image) %>
+      </div>
+    <% end %>
+  </ol>
+</div>

@@ -1,0 +1,5 @@
+%h1= @playlist.name
+- @playlist.songs.each do |song|
+  %p= link_to("#{song.name}", song_path(song))
+  %div= audio_tag(song.filename, :controls => true)
+  / %td= link_to('Refund', :action => song_path(song.id), :class => 'button radius tiny')

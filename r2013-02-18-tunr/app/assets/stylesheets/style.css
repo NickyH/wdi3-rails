@@ -1,0 +1,34 @@
+@import url(http://fonts.googleapis.com/css?family=Armata);
+
+.nav-bar.right li:nth-child(1)
+{
+  background-color: #94D3DA;
+  border-color: #94D3DA;
+}
+
+.nav-bar.right li:nth-child(1) a
+{
+  color: #817A6D;
+  font-weight: bolder;
+}
+
+h1.title
+{
+  font-family: 'Armata', sans-serif;
+  display: inline-block;
+  font-size: 60px;
+  float: left;
+  width: 300px;
+  line-height: 60px;
+  vertical-align: middle;
+  color: #5BB2B1;
+
+}
+
+h1.title img
+{
+
+  display: inline-block;
+  width: 120px;
+
+}

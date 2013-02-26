@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/css?family=Galindo);
+
+img
+{
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 300px;
+}
+
+nav
+{
+  background-color: #A99A90;
+  color: white;
+  height: 150px;
+  height: 80px;
+  font-family: 'Galindo', cursive;
+  margin: 0px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+nav a
+{
+  color: white;
+  line-height: 80px;
+  font-size: 30px;
+  text-decoration: none;
+  margin: 10px 50px 50px 100px;
+  display: inline-block;
+
+}
+
+nav a:hover
+{
+  color: green;
+}
+
+.stock
+{
+  background-color: #A99A90;
+  height: 500px;
+  font-family: 'Galindo', cursive;
+  margin: 0px 20px 20px 20px;
+  border-radius: 10px;
+
+}
+
+#stock
+{
+  margin: 50px 50px 50px 50px;
+  line-height: 100px;
+}
+
+#stock input
+{
+  margin: 50px 50px 50px 50px;
+}
+
+#stockresult
+{
+  background-color: #A99A90;
+  height: 500px;
+  font-family: 'Galindo', cursive;
+  margin: 0px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+#stockresult p
+{
+  margin: 50px 50px 50px 50px;
+  line-height: 100px;
+  font-size: 30px;
+}
+
+.movie
+{
+  background-color: #A99A90;
+  height: 500px;
+  font-family: 'Galindo', cursive;
+  margin: 0px 20px 20px 20px;
+  border-radius: 10px;
+
+}
+
+#movie
+{
+  margin: 50px 50px 50px 50px;
+  line-height: 100px;
+}
+
+#movie input
+{
+  margin: 50px 50px 50px 50px;
+}
+
+#movieresult
+{
+  background-color: #A99A90;
+  height: 500px;
+  font-family: 'Galindo', cursive;
+  margin: 0px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+#movieresult p
+{
+  margin: 50px 50px 50px 50px;
+  line-height: 100px;
+  font-size: 30px;
+}

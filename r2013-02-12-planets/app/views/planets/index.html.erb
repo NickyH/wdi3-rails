@@ -1,0 +1,14 @@
+<% @planets.each do |x| %>
+Name:<%= x.name %>
+Orbit:<%= x.orbit %>
+Mass:<%= x.mass %>
+<br>
+<% end %>
+
+
+
+<% @planets.each do |x| %>
+<%= link_to(x.name, planet_path(x.id)) %> has <%= pluralize(x.moons, 'moon') %>
+  <%= button_to 'delete', planet_delete_path(x.id) %>
+  <%= link_to 'edit', planet_edit_path(x.id) %>
+<% end %>
