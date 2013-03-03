@@ -1,0 +1,194 @@
+@import url(http://fonts.googleapis.com/css?family=Lemon);
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
+
+body
+{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjaiQdIxVNJV6EsazMGwf909fw8fbw2uMHkqduk-hUvcjA1vLh);
+  background-size: cover;
+  font-family: 'Happy Monkey', cursive;
+  color: white;
+}
+
+h1
+{
+  font-size: 60px;
+  color: #01BFB4;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  border-radius: 15px;
+  background-color: #323138;
+  text-align: center;
+  border: 1px solid black;
+  vertical-align: middle;
+}
+
+h2
+{
+  margin-left: 50px;
+  font-size: 20px;
+  color: white;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  text-align: center;
+  font-family: verdana;
+}
+
+.form
+{
+  width: 420px;
+  border-radius: 10px;
+  color: #FF726E;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  background-color: #323138;
+  height: 200px;
+  padding: 15px;
+}
+
+input
+{
+  width: 300px;
+  background-color: #fffff3;
+  margin-right: 10px;
+  height: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+ }
+
+#form1
+{
+  display: inline-block;
+  float: right;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+#form2
+{
+  display: inline-block;
+  float: right;
+  line-height: 30px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+#form3
+{
+  display: inline-block;
+  float: right;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+#form4
+{
+  display: block;
+  float: right;
+  line-height: 20px;
+  vertical-align: middle;
+  width: 900px;
+}
+
+#form5
+{
+  display: inline-block;
+  float: right;
+  line-height: 20px;
+  width: 200px;
+}
+
+#form1 input
+{
+  float: right;
+  margin-bottom: 20px;
+  height: 25px;
+  font-size: 20px;
+}
+
+#form2 input
+{
+  width: 100px;
+}
+
+#form3 input
+{
+  width: 100px;
+}
+
+#form4
+{
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+
+#form4 label
+{
+  float: right;
+  vertical-align: middle;
+}
+
+#form4 input
+{
+  width: 100px;
+  float: right;
+}
+
+#duration
+{
+  margin-top: 0px;
+}
+
+.image
+{
+  width: 200px;
+  height: 200px;
+  float: left;
+  background-size: cover;
+  border-radius: 10px;
+  border: 1px dashed grey;
+  margin: 5px;
+}
+
+#images
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  margin-top: 50px;
+}
+
+button
+{
+  width: 120px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: white;
+  margin: 10px;
+  text-size: 17px;
+  font-weight: bold;
+  color: #FF726E;
+  float: right;
+}
+
+#buttons
+{
+  float: right;
+  line-height: 50px;
+  display: inline;
+  width: 300px;
+  height: 50px;
+}
+
+.clear{
+  clear:both;
+  height: 30px;
+  display: block;
+  width: 1000px;
+}

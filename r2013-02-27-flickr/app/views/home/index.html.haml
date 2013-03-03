@@ -1,0 +1,26 @@
+%h1 FLICKR PICKR
+%h2 search flickr...set height, width and timer
+%h2 and watch them scroll...
+
+.form
+  #form1
+    = text_field_tag 'search', nil, :autofocus => true, :placeholder => 'Enter search term'
+  %p
+  #form2
+    = label_tag 'WIDTH'
+    = text_field_tag 'width', nil, :placeholder => 'Enter width'
+  %p
+  #form3
+    = label_tag 'HEIGHT'
+    = text_field_tag 'height', nil, :placeholder => 'Enter height'
+  %p
+  #form4
+    = text_field_tag 'duration', nil, :placeholder => 'Seconds'
+    = label_tag 'TIME'
+  %p
+  #form5
+    %span#buttons
+      = button_tag 'SEARCH FLICKR', :id => 'flickr'
+      = button_tag 'ClEAR', :id => 'clear'
+.clear
+#images

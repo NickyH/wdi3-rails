@@ -1,0 +1,57 @@
+.row
+  .three.columns
+    .controls
+      .today
+        %h1= 'Hello ' + @auth.name
+        .clear
+
+  .two.columns
+    .controls
+      .today
+        #target= @auth.target
+        .clear
+
+/ #today
+/   %h1= @meals.date
+
+%ul#meals
+  - @meals.each do |meal|
+    %li
+      .mealname= meal.name
+      .mealdescription= meal.description
+      .mealdate= meal.date
+      .mealtime= meal.time
+      .clear
+.row
+  .five.columns
+    .controls
+      .mealnew
+        = button_tag 'Add Meal', :id => 'new_meal', :class => 'button radius tiny'
+      .mealform.hide
+        = form_tag do
+          = label_tag :name
+          = text_field_tag :name
+          = label_tag :description
+          = text_field_tag :description
+          = label_tag :date
+          = text_field_tag :date
+          = label_tag :time
+          = text_field_tag :time
+          = hidden_field_tag :id
+          = submit_tag 'Create New Meal', :id => 'create_meal', :class => 'button radius'
+          = submit_tag 'Cancel', :id => 'cancel_meal', :class => 'button radius alert'
+
+.row
+  .five.columns
+    .controls
+      .foodnew
+        = button_tag 'Add Food', :id => 'new_food', :class => 'button radius tiny'
+      .foodform.hide
+        = form_tag do
+          = label_tag :name
+          = text_field_tag :name
+          = label_tag :calories
+          = text_field_tag :calories
+          = hidden_field_tag :id
+          = submit_tag 'Create New Food', :id => 'create_food', :class => 'button radius'
+          = submit_tag 'Cancel', :id => 'cancel_food', :class => 'button radius alert'

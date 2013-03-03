@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: calorie_development
+  pool: 5
+  host: localhost
+  username: nickyhughes
+  password:
