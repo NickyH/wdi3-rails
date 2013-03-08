@@ -1,24 +1,24 @@
 class PrioritiesController < ApplicationController
+  before_filter :ensure_logged_in
   def index
-    @priorities = @auth.priorities
+    @priorities = @auth.priorities.order(:value).reverse
+  end
+  def up
+    priority = Priority.find(params[:id])
+    render :json => priority.swap_higher(@auth)
+  end
+  def down
+    priority = Priority.find(params[:id])
+    render :json => priority.swap_lower(@auth)
   end
   def create
-    id = params[:id]
-    color = params[:color]
-    name = params[:name]
-    value = params[:value]
-
-    if id.present?
-      priority = Priority.find(id)
-      priority.color = color
-      priority.name = name
-      priority.value = value
-      priority.save
-    else
-      priority = Priority.create(:color => color, :name => name, :value => value)
-      @auth.priorities << priority
-    end
-
+    priority = Priority.create(params[:priority])
+    @auth.priorities << priority
+    render :json => [priority]
   end
-  render :json => priority
+  def update
+    priority = Priority.find(params[:id])
+    priority.update_attributes(params[:priority])
+    render :json => [priority]
+  end
 end

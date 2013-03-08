@@ -1,0 +1,18 @@
+.row
+  .panel
+    .small-7.small-centered.columns
+      .float
+        = link_to('Add Activity', new_exercise_path, :remote => true, :class => 'button small success radius')
+      .float
+        // = select_tag 'activities_select', options_for_select(@selection.map { |a| [a, a] })
+        = select_tag 'activities', options_for_select(@selection.map { |a| [a, a] })
+      .float
+        = button_tag 'Chart', :id => 'chartbutton', :class => 'button small alert radius'
+
+#chart
+
+.row
+  .panel
+    .small-7.small-centered.columns
+      #new_exercise
+      %ol#exercises

@@ -14,6 +14,7 @@
    <title>R20130228Todo</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
   <link rel="stylesheet" href="stylesheets/app.css">
@@ -32,6 +33,7 @@
         <li><%= link_to('Create User', new_user_path) %></li>
         <li><%= link_to('List Users', users_path) %></li>
         <li><%= link_to('Priorities', priorities_path) %></li>
+        <li><%= link_to('Tasks', tasks_path) %></li>
         <% if @auth.present? %>
           <li><%= link_to(@auth.email, login_path, :method => :delete) %></li>
         <% else %>

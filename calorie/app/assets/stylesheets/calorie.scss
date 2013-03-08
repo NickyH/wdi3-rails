@@ -1,6 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
+
 li
 {
   list-style-type: none;
+}
+
+a
+{
+  color: grey;
+}
+
+.row.mainlogo
+{
+  background-color: #2B2B2B;
+  width: 940px;
+  img{
+    margin-left: 210px;
+  }
+}
+
+a:hover
+{
+  color: grey;
 }
 
 h1
@@ -31,14 +52,64 @@ input
   width: 200px;
 }
 
+div.formwindow
+{
+  width: 300px;
+  height: auto;
+  float: right;
+  background-color: #FFEBCA;
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+div.formwindow2
+{
+  width: 300px;
+  height: auto;
+  float: right;
+  background-color: #FFEBCA;
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+#formheader
+{
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .mealform
 {
   width: 300px;
+  float: left;
+  margin-left: 20px;
+  input{
+    width: 200px;
+  }
 }
 
-.meals
+.foodform
+{
+  width: 300px;
+  float: left;
+  margin-left: 20px;
+  input{
+    width: 200px;
+  }
+}
+
+#meals
 {
   float: left;
+  width: 500px;
 }
 
 .calories
@@ -53,7 +124,7 @@ input
 
 #target
 {
-  background-color: #F24C3D;
+  background-color: #FF7729;
   color: white;
   width: 200px;
   height: 80px;
@@ -64,12 +135,151 @@ input
   text-align: center;
   float: left;
   display: inline-block;
+  border-radius: 5px;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.mealname
+#targetcaption
 {
-  background-color: #F24C3D;
-  color: white;
-  width: 300px;
-  height: auto
+  font-size: 15px;
+  margin: 0 auto 10px auto;
+  line-height: 15px;
+  float: right;
+  display: inline-block;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.mealnamedate
+{
+  background-color: #FF2151;
+  color: black;
+  width: 400px;
+  height: 60px;
+  float: left;
+  text-indent: 10px;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.mealdescription
+{
+  background-color: #FFEBCA;
+  color: black;
+  width: 470px;
+  height: 40px;
+  float: left;
+  text-indent: 10px;
+  border-bottom: 2px solid black;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.addfoodlink
+{
+  background-color: #FF2151;
+  color: black;
+  width: 70px;
+  height: 60px;
+  float: left;
+  text-indent: 10px;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  a{
+    color: black;
+  };
+  a:hover{
+    color: cyan;
+  };
+}
+
+#now
+{
+  font-size: 20px;
+  float: right;
+  margin-top: 10px;
+}
+
+.mealchange
+{
+  background-color: #FFEBCA;
+  border-bottom: none;
+}
+
+.number#add_food
+{
+  display: inline;
+  float: right;
+  width: 30px;
+}
+
+.btnmeal
+{
+  width: 220px;
+  height: 100px;
+  font-size: 30px;
+  margin-left: 70px;
+  background-color: #1AB58A;
+  border-radius: 5px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #FFEBCA;
+}
+
+.btnfood
+{
+  width: 220px;
+  height: 100px;
+  font-size: 30px;
+  background-color: #1AB58A;
+  border-radius: 5px;
+  color: #FFEBCA;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#create_meal
+{
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #1AB58A;
+  border-radius: 5px;
+  color: #FFEBCA;
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin-bottom: 10px;
+}
+
+#cancel_meal
+{
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #FF2151;
+  border-radius: 5px;
+  color: #FFEBCA;
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin-bottom: 10px;
+}
+
+#create_food
+{
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #1AB58A;
+  border-radius: 5px;
+  color: #FFEBCA;
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin-bottom: 10px;
+}
+
+#cancel_food
+{
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #FF2151;
+  border-radius: 5px;
+  color: #FFEBCA;
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin-bottom: 10px;
 }

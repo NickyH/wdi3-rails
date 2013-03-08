@@ -1,0 +1,10 @@
+- @users.each do |user|
+  - @cash = user.balance
+  - if user.stocks.any?
+    - @price = user.stocks.map(&:price)
+    - @quantity = user.stocks.map(&:quantity)
+    - @stocks = @price.zip(@quantity).map{|p,q| p*q }.inject(:+)
+  - else
+    - @stocks = 0
+  - @totalBalance = @cash + @stocks
+  %li= "#{user.email}, #{number_to_currency(@totalBalance)}"

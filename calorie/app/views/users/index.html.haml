@@ -1,34 +1,35 @@
 .row
   .three.columns
     .controls
-      .today
-        %h1= 'Hello ' + @auth.name
-        .clear
+      .foodnew
+        = button_tag 'Add Food', :id => 'new_food', :class => 'button radius btnfood'
+  .three.columns
+    .controls
+      .mealnew
+        = button_tag 'Add Meal', :id => 'new_meal', :class => 'button radius btnmeal'
 
   .two.columns
     .controls
       .today
-        #target= @auth.target
+        #target= link_to(@auth.target, edit_user_path(@auth), :title => 'Target calories for ' + @auth.name + ', click to edit')
+        #now= Date.today.to_s(:long)
         .clear
 
-/ #today
-/   %h1= @meals.date
-
-%ul#meals
-  - @meals.each do |meal|
-    %li
-      .mealname= meal.name
-      .mealdescription= meal.description
-      .mealdate= meal.date
-      .mealtime= meal.time
-      .clear
 .row
   .five.columns
-    .controls
-      .mealnew
-        = button_tag 'Add Meal', :id => 'new_meal', :class => 'button radius tiny'
+    %ul#meals
+      - @meals.each do |meal|
+        %li.mealnamedate= meal.name
+        .addfoodlink= link_to('+ Food', 'new_food_path')
+        %li.mealdescription.hide= meal.description
+        / %li.mealfoods= meal
+        .clear
+
+  .seven.columns
+    %div.formwindow.hide
       .mealform.hide
         = form_tag do
+          #formheader= 'Create New Meal'
           = label_tag :name
           = text_field_tag :name
           = label_tag :description
@@ -41,13 +42,10 @@
           = submit_tag 'Create New Meal', :id => 'create_meal', :class => 'button radius'
           = submit_tag 'Cancel', :id => 'cancel_meal', :class => 'button radius alert'
 
-.row
-  .five.columns
-    .controls
-      .foodnew
-        = button_tag 'Add Food', :id => 'new_food', :class => 'button radius tiny'
+    %div.formwindow2.hide
       .foodform.hide
         = form_tag do
+          #formheader= 'Add New Food'
           = label_tag :name
           = text_field_tag :name
           = label_tag :calories

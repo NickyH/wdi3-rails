@@ -11,12 +11,45 @@ $(function(){
       buttonImageOnly: true
     });
   $('#date').insertAfter( $('#date').next('img') );
-
+  $('.mealnamedate').mouseover(show_meal_description);
+  $('.mealnamedate').mouseover(show_meal_description);
+  $('.mealnamedate').mouseleave(hide_meal_description);
+  $('.mealnamedate').mouseleave(hide_meal_description);
+  $('#target').tooltip({
+      position: {
+        my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( "arrow" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+    });
 });
+
+function show_meal_description()
+{
+  $(this).next().next().show();
+  $(this).addClass('mealchange');
+  $(this).next().addClass('mealchange');
+}
+
+function hide_meal_description()
+{
+  $(this).next().next().hide();
+  $(this).removeClass('mealchange');
+  $(this).next().removeClass('mealchange');
+}
 
 function show_meal_form()
 {
   $('.mealform').show();
+  $('.formwindow').show();
+  $('#meals').fadeTo( 2, 0.2);
   $('#new_food').hide();
   $('#new_meal').hide();
 }
@@ -24,6 +57,8 @@ function show_meal_form()
 function show_food_form()
 {
   $('.foodform').show();
+  $('.formwindow2').show();
+  $('#meals').fadeTo( 2, 0.2);
   $('#new_food').hide();
   $('#new_meal').hide();
 }
@@ -31,6 +66,8 @@ function show_food_form()
 function hide_meal_form()
 {
   $('.mealform').hide();
+  $('.formwindow').hide();
+  $('#meals').fadeTo( 2, 1);
   $('#new_meal').show();
   $('#new_food').show();
   return false
@@ -39,6 +76,8 @@ function hide_meal_form()
 function hide_food_form()
 {
   $('.foodform').hide();
+  $('.formwindow2').hide();
+  $('#meals').fadeTo( 2, 1);
   $('#new_meal').show();
   $('#new_food').show();
   return false

@@ -1,0 +1,10 @@
+.row
+  .panel
+    .small-7.small-centered.columns
+      = link_to('New', new_stock_path, :remote => 'true', :class => 'button small alert radius')
+.row
+  .panel
+    .small-7.small-centered.columns
+      #new_user
+      #ul#users
+        = render(:partial => 'users')

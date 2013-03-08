@@ -2,8 +2,7 @@ Calorie::Application.routes.draw do
 
 root :to => 'home#index'
 
-resources :users
-resources :meals
+resources :users, :meals
 
 get '/login' => 'session#new'
 post '/login' => 'session#create'

@@ -27,12 +27,13 @@
     <div class="nine columns">
       <ul class="nav-bar right">
         <li class = 'active'><%= link_to('Home', root_path) %></li>
-        <li><%= link_to('Create User', new_user_path) %></li>
-        <li><%= link_to('List Users', users_path) %></li>
-        <% if @auth.present? %>
-          <li><%= link_to(@auth.name + ', Logout', login_path, :method => :delete) %></li>
-        <% else %>
+        <% if !@auth.present? %>
+          <li><%= link_to('Create User', new_user_path) %></li>
           <li><%= link_to('Login', login_path) %></li>
+        <% else %>
+          <li><%= link_to('Edit Profile', edit_user_path(@auth)) %></li>
+          <li><%= link_to('MyCalories', users_path) %></li>
+          <li><%= link_to(@auth.name + ', Logout', login_path, :method => :delete) %></li>
         <% end %>
       </ul>
     </div>
@@ -51,24 +52,24 @@
   </div>
 </div>
 
-  <footer class="row">
-    <div class="twelve columns">
-      <hr />
-      <div class="row">
-        <div class="six columns">
-          <p>&copy; Nicky Hughes Rails App 2013.</p>
-        </div>
-        <div class="six columns">
-          <ul class="link-list right">
-            <li><a href="http://nickyh.github.com/">Portfolio</a></li>
-            <li><a href="http://nickyonrails.tumblr.com/">Tumblr</a></li>
-            <li><a href="https://twitter.com/nichug00">Twitter</a></li>
-            <li><a href="https://github.com/nickyh">Github</a></li>
-          </ul>
-        </div>
+<footer class="row">
+  <div class="twelve columns">
+    <hr />
+    <div class="row">
+      <div class="six columns">
+        <p>&copy; Nicky Hughes Rails App 2013.</p>
+      </div>
+      <div class="six columns">
+        <ul class="link-list right">
+          <li><a href="http://nickyh.github.com/">Portfolio</a></li>
+          <li><a href="http://nickyonrails.tumblr.com/">Tumblr</a></li>
+          <li><a href="https://twitter.com/nichug00">Twitter</a></li>
+          <li><a href="https://github.com/nickyh">Github</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <script src="javascripts/jquery.js"></script>
   <script src="javascripts/foundation.min.js"></script>

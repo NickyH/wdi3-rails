@@ -1,0 +1,19 @@
+.row
+.panel
+.large-7.columns
+  %h5= 'Sign up!'
+  = form_for @user do |f|
+    = f.label :name
+    = f.text_field :name, :autofocus => true
+    = f.label :email
+    = f.text_field :email
+    = f.label :image
+    = f.text_field :image
+    = f.label :password
+    = f.password_field :password
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+    = f.label :location
+    = f.text_field :location
+    = f.submit nil, :class => 'button radius'
+

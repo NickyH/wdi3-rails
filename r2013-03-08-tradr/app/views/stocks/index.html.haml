@@ -1,0 +1,24 @@
+%script
+  var quotes = {};
+.row
+  .panel
+    .small-7.small-centered.columns
+      = link_to('Add', new_stock_path, :remote => 'true', :class => 'button small alert radius')
+
+.row
+  .panel.stockpanel
+    .small-7.small-centered.columns
+      - @userstocks.each do |s|
+        = label_tag s.name
+        %script
+          = "quotes['#{s.name}'] = [];"
+        .stockcheckbox= check_box_tag s.name, s.name, false
+.row
+  .panel
+    .small-7.small-centered.columns
+      #new_stock
+      #ul#stocks
+        = render(:partial => 'stocks')
+
+
+#chart

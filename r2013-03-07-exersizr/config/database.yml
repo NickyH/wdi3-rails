@@ -1,0 +1,9 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: r2013-03-07-exersizr_development
+  pool: 5
+  host: localhost
+  username: nickyhughes
+  password:

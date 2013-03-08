@@ -1,0 +1,15 @@
+.row
+  .panel
+    .small-3.small-centered.columns
+    %h5= 'Add an activity'
+    = form_for @exercise, :remote => true do |f|
+      = f.label :activity
+      = f.text_field :activity, :autofocus => true
+      = f.label :value
+      = f.text_field :value
+      = f.label :units
+      = f.text_field :units
+      = f.label :completed
+      = f.text_field :completed
+      = f.submit nil, :class => 'button radius'
+

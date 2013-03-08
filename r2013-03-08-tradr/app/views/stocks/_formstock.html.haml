@@ -1,0 +1,14 @@
+.row
+  .panel
+    .small-5.small-centered.columns
+      %h5= 'New stock'
+      = form_for @stock, :remote => true do |f|
+        = f.label :name
+        = f.text_field :name, :autofocus => true
+        = f.label :price
+        = f.text_field :price
+        = f.label :quantity
+        = f.text_field :quantity
+        = f.submit nil, :class => 'button radius'
+      = button_tag 'Cancel', :id => '#cancelStock'
+
