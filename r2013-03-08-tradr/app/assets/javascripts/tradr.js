@@ -64,36 +64,18 @@ function add_price(priceandname)
 function show_chart()
 {
 
+  $('#chart').empty();
   new Morris.Line({
   element: 'chart',
   data: quotes[activestock],
   xkey: 'time',
   ykeys: ['value'],
-  labels: ['quote']
+  labels: ['quote'],
+  ymin: 'auto',
+  ymax: 'auto'
   });
 
-  // $.ajax({
-  //     dataType: 'json',
-  //     type: "get",
-  //     url: "stocks/charts/" + stockname,
-  //   }).done(process_stock);
-
-  // return false;
-
-  // start_timer
 }
-
-// function process_stock(stocks)
-// {
-//   new Morris.Line({
-//   element: 'chart',
-//   data: stocks,
-//   xkey: '',
-//   ykeys: [@stockarray],
-//   labels: ['Value']
-// });
-
-// }
 
 function hide_stockform()
 {
