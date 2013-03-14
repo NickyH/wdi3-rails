@@ -19,7 +19,7 @@ end
 
    describe 'POST /login' do
     let(:user) {User.create(email: 'bob@gmail.com', username: 'Bob', password: 'a', password_confirmation: 'a')}
-    it 'logs the user into the system if credentals are correct', :js => true do
+    it 'logs the user into the system if credentials are correct', :js => true do
       visit root_path
       click_link('Login')
       fill_in('email', :with => user.email)
@@ -28,7 +28,7 @@ end
       page.should_not have_button('Start Flirting')
     end
 
-    it 'logs the user into the system if credentals are incorrect', :js => true do
+    it 'logs the user into the system if credentials are incorrect', :js => true do
       visit root_path
       click_link('Login')
       fill_in('email', :with => user.email)
