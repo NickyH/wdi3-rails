@@ -1,0 +1,17 @@
+- if @products.present?
+  %table
+    %tr
+      %th Product
+      %th Description
+      %th Photo
+      %th Cost
+      %th Tags
+    - @products.each do |product|
+      %tr
+        %td= product.name
+        %td= product.description
+        %td= product.image
+        %td= number_to_currency product.cost
+        %td
+          - product.tags.each do |tag|
+            = link_to tag.name, filter_products_path(tag.id), :remote => true, :class => 'button tiny radius'

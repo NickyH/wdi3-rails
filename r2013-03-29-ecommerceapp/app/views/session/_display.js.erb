@@ -1,0 +1,3 @@
+$('#nav').fadeOut('fast').empty().append('<%=j render(:partial => 'layouts/nav') %>').slideDown('slow');
+$('#form').fadeOut('fast').empty();
+$('#products').fadeOut('fast').empty().append('<%=j render(:partial => 'products/index') %>').slideDown('slow');

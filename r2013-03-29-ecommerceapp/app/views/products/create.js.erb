@@ -1,0 +1,7 @@
+$('#form').fadeOut('fast');
+$('#form').empty();
+$('#form').hide().append('<%=j render :partial =>'form'%>');
+$('#form').show('clip', 'slow');
+$('#products').empty().append('<%=j render :partial =>'products/index'%>');
+$('#map_canvas').empty().append('<%=j render :partial =>'products/map'%>');
+$('#map_canvas').show();

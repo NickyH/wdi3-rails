@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="large-12 columns">
+    <div class="top-bar">
+     <ul class="button-group">
+       <li><%= link_to('Home', root_path, :class => 'button tiny') %></li>
+       <% if !@auth.present? %>
+        <li><%= link_to('Login', '/login', :class => 'button tiny', :remote => true) %></li>
+       <% else %>
+       <li><%= link_to('Logout, ' + @auth.email, '/login', :method => :delete, :class => 'button tiny', :remote => true) %></li>
+       <% end %>
+      </ul>
+      <div id = 'form'>
+      </div>
+    </div>
+    <h2 class='subheader'>E-Commerce</h2>
+  </div>
+</div>
+
