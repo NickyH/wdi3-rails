@@ -1,7 +1,7 @@
 class Home
   @document_ready: ->
     $('#form').on('click', 'a[data-clear-form]', Home.clear_form)
-    $('#search_top').on('keydown', '#search', Home.filter_products)
+    $('#search_top').on('keyup', '#search', Home.filter_products)
 
 
   @clear_form: (e) ->

@@ -1,0 +1,6 @@
+= form_tag scrape_path do
+  =label_tag :pages
+  = text_field_tag :pages
+  = submit_tag(scrape_path, :remote => true)
+#stories
+  = render :partial => 'shared/stories'

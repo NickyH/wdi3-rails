@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: r2013-03-19-photo-album_development
+  pool: 5
+  host: localhost
+  username: nickyhughes
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: r2013-03-19-photo-album_test
+  pool: 5
+  host: localhost
+  username: nickyhughes
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: r2013-03-19-photo-album_production
+  pool: 5
+  host: localhost
+  username: nickyhughes
+  password:

@@ -14,9 +14,9 @@ require 'spec_helper'
 
 describe Administrator do
   describe '.new' do
-    it 'creates an instance of Administrator' do
-      subscriber = Administrator.new
-      expect(subscriber).to be_an_instance_of(Administrator)
+    it 'creates an intance of Administrator' do
+      administrator = Administrator.new
+      expect(administrator).to be_an_instance_of(Administrator)
     end
   end
 
@@ -30,25 +30,23 @@ describe Administrator do
   end
 
   describe '.create' do
-  it 'has an id' do
-    administrator = Administrator.create
-    expect(administrator.id).to be nil
+    it 'has an id' do
+      administrator = Administrator.create(role: 'db')
+      expect(administrator.id).to_not be nil
+    end
+    it 'role fails validation when blank' do
+      administrator = Administrator.create
+      expect(administrator.id).to be nil
+    end
   end
 
-  it 'role fails validation when blank' do
-    administrator = Administrator.create
-    expect(administrator.id).to be nil
+  describe '#metadata' do
+    it 'has administrator properties' do
+      administrator = Administrator.create(role: 'db', ssn: '111-22-3333', tel: '1-111-222-3333')
+      expect(administrator.id).to_not be nil
+      expect(administrator.role).to eq 'db'
+      expect(administrator.ssn).to eq '111-22-3333'
+      expect(administrator.tel).to eq '1-111-222-3333'
+    end
   end
-end
-
- describe '#metadata' do
-  it 'has administrator properties' do
-    administrator = Administrator.create(role: 'db', ssn: '111-22-3333', tel: '1-111-222-3333')
-    expect(administrator.id).to_not be nil
-    expect(administrator.role).to eq 'db'
-    expect(administrator.ssn).to eq '111-22-3333'
-    expect(administrator.tel).to eq '1-111-222-3333'
-  end
-end
-
 end

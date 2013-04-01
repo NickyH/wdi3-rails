@@ -1,11 +1,11 @@
-.row
-  .small-3.columns
-    %h1= 'Flirt'
-    %hr
-.row
-  .small-3.columns
-    = link_to('Register', new_subscriber_path, :remote => true)
-    = link_to('Login', login_path, :remote => true)
+#anonymous
+  = render(:partial => 'anonymous')
+
 .row
   #form
+
+.row
+  #subscriptions
+    = render(:partial => 'subscriptions')
+
 

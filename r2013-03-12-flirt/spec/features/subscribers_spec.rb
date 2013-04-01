@@ -8,11 +8,45 @@ describe 'Subscribers' do
     end
   end
 
+  describe 'POST /login' do
+    it 'the subscriber can view a list of subscriptions', :js => true do
+      add_subscriptions
+      login_to_system_as_subscriber_with_no_subscription
+      page.should have_button('Free')
+      visit root_path
+      page.should have_button('Basic')
+    end
+    it 'the subscriber does not see a list of subscriptions', :js => true do
+      add_subscriptions
+      login_to_system_as_subscriber_with_a_subscription
+      page.should_not have_button('Free')
+      visit root_path
+      page.should_not have_button('Basic')
+    end
+    it 'the admin does not see a list of subscriptions', :js => true do
+      add_subscriptions
+      login_to_system_as_admin
+      page.should_not have_button('Free')
+      visit root_path
+      page.should_not have_button('Basic')
+    end
+  end
+
+  describe 'POST /subscribers/purchase' do
+  it 'purchases a subscription for a subscriber', :js => true do
+    subscriber = FactoryGirl.create(:subscriber_no_subscription)
+    login_to_system(subscriber.user)
+    click_button('Basic')
+    page.should_not have_button('Basic')
+    page.should have_link('Profile')
+  end
+end
+
   describe 'GET /subscribers/new' do
-    it 'displays the create subscriber and cancel buttons', :js => true do
+    it 'displays the new user form', :js => true do
       visit root_path
       click_link('Register')
-      page.should have_button('Cancel')
+      page.should have_link('Cancel')
       page.should have_button('Create User')
     end
   end
@@ -27,18 +61,66 @@ describe 'Subscribers' do
       fill_in('user_password_confirmation', :with => 'a')
       click_button('Create User')
       page.should_not have_button('Create User')
-      page.should have_text('You have successfully created an account')
       expect(Subscriber.first.user.username).to eq 'Bob'
+    end
+    it 'does not create a new subscriber due to failing validation', :js => true do
+      visit root_path
+      click_link('Register')
+      click_button('Create User')
+      page.should have_button('Create User')
+      page.should have_css('#form ul li', :count => 3)
+      page.should have_text('Fix the following 3 errors:')
     end
   end
 
   describe 'JS cancel_subscriber_form()' do
-    it 'removes the create subscriber form', :js => true do
+    it 'removes the subscriber form', :js => true do
       visit root_path
-      page.should have_link('Register')
       click_link('Register')
-      click_button('Cancel')
+      click_link('Cancel')
       page.should_not have_button('Create User')
     end
   end
+end
+
+def add_subscriptions
+  ['Free', 'Basic'].each do |name|
+    Subscription.create(plan: name)
+  end
+end
+
+def login_to_system_as_admin
+  user = User.create(email: 'bob@gmail.com', username: 'Bob', password: 'a', password_confirmation: 'a')
+  admin = Administrator.create(role: 'dba')
+  admin.user = user
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => user.email)
+  fill_in('Password', :with => 'a')
+  click_button('Start Flirting')
+end
+
+def login_to_system_as_subscriber_with_no_subscription
+  user = User.create(email: 'bob@gmail.com', username: 'Bob', password: 'a', password_confirmation: 'a')
+  subscriber = Subscriber.create(tagline: 'please change tagline', bio: 'please change bio', gender: 'please change gender', age: 99)
+  subscriber.user = user
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => user.email)
+  fill_in('Password', :with => 'a')
+  click_button('Start Flirting')
+end
+
+def login_to_system_as_subscriber_with_a_subscription
+  user = User.create(email: 'bob@gmail.com', username: 'Bob', password: 'a', password_confirmation: 'a')
+  subscriber = Subscriber.create(tagline: 'please change tagline', bio: 'please change bio', gender: 'please change gender', age: 99)
+  subscriber.user = user
+  subscription = Subscription.create
+  subscriber.subscription = subscription
+  subscriber.save
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => user.email)
+  fill_in('Password', :with => 'a')
+  click_button('Start Flirting')
 end
